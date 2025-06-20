@@ -22,4 +22,9 @@ class ChatServiceProvider extends PackageServiceProvider
             ->hasMigration('create_chat_table')
             ->hasCommand(ChatCommand::class);
     }
+
+    public function boot()
+    {
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+    }
 }

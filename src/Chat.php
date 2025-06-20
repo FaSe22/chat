@@ -2,4 +2,6 @@
 
 namespace Fase\Chat;
 
-class Chat {}
+class Chat
+{
+}
