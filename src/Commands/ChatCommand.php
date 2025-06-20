@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Fase\Chat\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class ChatCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'chat';
 
     public $description = 'My command';
 
