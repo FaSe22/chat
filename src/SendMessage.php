@@ -1,5 +1,7 @@
 <?php
 
+namespace Fase\Chat;
+
 use Fase\Chat\GotMessage;
 use Fase\Chat\Message;
 use Illuminate\Bus\Queueable;

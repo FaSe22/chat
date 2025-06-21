@@ -26,5 +26,12 @@ class ChatServiceProvider extends PackageServiceProvider
     public function boot()
     {
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'chat');
+        if ($this->app->runningInConsole()) {
+            // Publish views
+            $this->publishes([
+                __DIR__ . '/../resources/views' => resource_path('views/vendor/fase/chat'),
+            ], 'views');
+        }
     }
 }

@@ -62,6 +62,8 @@ class Chatroom extends Model
 
         throw_if($user->chatrooms()->pluck("chatrooms.id")->doesntContain($this->id), new Exception("Unauthorized."));
 
-        $this->messages()->create($message->toArray() + ['user_id' => $user->id]);
+        $createdMessage = $this->messages()->create($message->toArray());
+
+        SendMessage::dispatch($createdMessage);
     }
 }
